@@ -24,3 +24,7 @@
   contributions use focused PRs. Do not publish a binary release before device
   evidence exists. GitHub macOS CI supplements, rather than replaces, the
   unavailable local Apple build lane.
+- 2026-09-26: The first public CI run (36279902944, source commit 5d919fb)
+  passed 7 browser tests, 3 shared Swift tests, and both simulator target builds
+  using Xcode 16.4. Update build claims while keeping physical-device,
+  accessibility, latency, and wrist-down evidence explicitly pending.

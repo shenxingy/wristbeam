@@ -6,15 +6,16 @@ and physical-device behavior. Do not collapse them into a single “works” bad
 ## Current evidence
 
 Development host: Linux, Node 22, Google Chrome 154. No Xcode, Swift toolchain,
-Apple SDKs, or paired Apple devices are available on this host.
+Apple SDKs, or paired Apple devices are available on this host. Separate hosted
+macOS CI provides the native compilation evidence below; it is not a local run.
 
 | Lane | Status |
 | --- | --- |
 | Chromium browser tests | 7 passed: scroll directions, paging/bounds, empty pages, invalid commands, focused/touched nested panels, detached fallback, CSS smooth-scroll override, and bundled sample integration |
 | Sample article rendering | No horizontal overflow at 390/768/1280/1440 widths in light and dark mode; sample screenshots reviewed, not native app screenshots |
-| Native Swift protocol tests | Written, not run; no Swift toolchain |
-| iOS and watchOS builds | Not run; `bash scripts/check-apple.sh` exits 2 and names the missing macOS/Xcode environment |
-| Hosted CI | See [live browser and Apple build checks](https://github.com/shenxingy/wristbeam/actions/workflows/check.yml); hosted compilation is separate from device validation |
+| Native Swift protocol tests | 3 passed in hosted macOS CI; unavailable on the local Linux host |
+| iOS and watchOS builds | Both unsigned simulator builds passed in hosted CI with Xcode 16.4; physical-device signing/install untested |
+| Hosted CI | [Run 36279902944](https://github.com/shenxingy/wristbeam/actions/runs/36279902944) passed both jobs for source commit `5d919fb`; browser job 49s, Apple job 1m32s |
 | WebKit isolated-world integration | Not tested |
 | Physical Watch → iPhone | Not tested |
 | Native layout / VoiceOver / Dynamic Type | Not tested |
@@ -30,8 +31,11 @@ the behavior assertions and required CI lanes were not weakened.
 
 The browser engine was mutation-tested: disabling movement caused 5 of the 6
 engine tests to fail. The original source was restored and the full suite rerun.
-The native code still requires compiler review; it is not an installable
-verified release.
+The native code has now passed compiler checks in the hosted run. This does not
+make it an installable, device-verified release. The Apple log includes a
+nonfatal App Intents metadata warning because no AppIntents dependency exists;
+no failed test or build gate was ignored. Local `bash scripts/check-apple.sh`
+still exits 2 because this Linux host lacks macOS/Xcode.
 
 ## Mac gates
 

@@ -14,18 +14,20 @@ screen at a time. The current prototype uses no additional hardware, server,
 or account. Desktop browsers, more operating systems, and media players are
 future adapters, not features available today.
 
-**Status: source prototype, not a verified native release.** The browser scroll
-engine has been tested in Chromium. The iOS/watchOS apps have **not yet been
-compiled or tested on physical devices**. The development host is Linux; the
-Apple build and device gates below remain open. There are no prebuilt binaries
-or TestFlight release. Follow the live [build checks](https://github.com/shenxingy/wristbeam/actions/workflows/check.yml)
-and the separate [device evidence](docs/validation.md).
+**Status: build-checked source prototype; physical-device validation pending.**
+The [first public CI run](https://github.com/shenxingy/wristbeam/actions/runs/36279902944)
+passed 7 Chromium tests, 3 shared Swift tests, and unsigned iOS/watchOS simulator
+builds with Xcode 16.4. Watch-to-phone behavior, native accessibility, and
+wrist-down usability have **not been tested on physical devices**. There are
+no prebuilt binaries or TestFlight release. Follow the live
+[build checks](https://github.com/shenxingy/wristbeam/actions/workflows/check.yml)
+and separate [device evidence](docs/validation.md).
 
 ## Grow one working path at a time
 
 | Target | State | Next evidence needed |
 | --- | --- | --- |
-| Own iPhone reader + Apple Watch | Source prototype; Chromium engine tests pass | Native builds, paired-device use, wrist-down recovery |
+| Own iPhone reader + Apple Watch | Source prototype; tests and simulator builds pass | Paired-device use, accessibility, wrist-down recovery |
 | Desktop Chrome; macOS first | Planned | One explicitly paired computer and selected tab |
 | Windows / Linux receivers | Planned | Per-OS installation and compatibility evidence |
 | Safari on macOS / iOS | Separate research tracks | Platform-specific messaging and lifecycle experiments |
@@ -57,7 +59,7 @@ tested scope.
 
 Requirements: full Xcode 16 or newer with iOS/watchOS SDKs, XcodeGen 2.44 or
 newer, and a paired iPhone (iOS 17+) and Apple Watch (watchOS 10+) for live tests.
-The exact Xcode/device combination is not yet validated.
+CI has compiled with Xcode 16.4; physical-device combinations remain unvalidated.
 
 ```bash
 brew install xcodegen

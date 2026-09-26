@@ -11,9 +11,11 @@ Wristbeam 是一个逐步探索“从手腕控制自己的设备”的 MIT 开�
 或点上下箭头翻一屏。当前原型只需要手机和手表，不需要额外硬件、服务器或账号。
 电脑、不同操作系统、浏览器和播放器是后续拓展方向，目前还没有实现。
 
-**当前状态：代码原型，尚未验证原生 App 构建及真机运行。** 网页滚动模块已通过
-Chromium 测试；开发环境是 Linux，没有 Xcode 和配对设备。没有安装包或 TestFlight
-版本，不能把浏览器测试通过理解为手表联动已跑通。
+**当前状态：已通过编译与自动化测试的代码原型，尚未真机验证。**
+[首轮公开 CI](https://github.com/shenxingy/wristbeam/actions/runs/36279902944)
+通过了 7 项 Chromium 测试、3 项 Swift 核心测试，以及 Xcode 16.4 下 iOS/watchOS
+两个目标的无签名模拟器构建。手表联动、无障碍和垂腕体验仍待真机验证。
+没有安装包或 TestFlight 版本；编译通过不代表手表联动已跑通。
 
 ## 一点一点拓展
 
@@ -42,7 +44,8 @@ Safari 扩展可以作为后续方向。第一版不含自动滚动和自定义�
 ## 在 Mac 上安装开发版
 
 需要完整 Xcode 16 或更新版本、iOS/watchOS SDK、XcodeGen 2.44+，以及配对的
-iPhone（iOS 17+）和 Apple Watch（watchOS 10+）。具体版本组合尚待验证。
+iPhone（iOS 17+）和 Apple Watch（watchOS 10+）。CI 已验证 Xcode 16.4 编译，
+具体真机组合尚待验证。
 
 ```bash
 brew install xcodegen
