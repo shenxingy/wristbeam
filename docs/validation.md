@@ -14,13 +14,19 @@ Apple SDKs, or paired Apple devices are available on this host.
 | Sample article rendering | No horizontal overflow at 390/768/1280/1440 widths in light and dark mode; sample screenshots reviewed, not native app screenshots |
 | Native Swift protocol tests | Written, not run; no Swift toolchain |
 | iOS and watchOS builds | Not run; `bash scripts/check-apple.sh` exits 2 and names the missing macOS/Xcode environment |
-| Hosted CI | Configured, not run; no remote repository exists |
+| Hosted CI | See [live browser and Apple build checks](https://github.com/shenxingy/wristbeam/actions/workflows/check.yml); hosted compilation is separate from device validation |
 | WebKit isolated-world integration | Not tested |
 | Physical Watch → iPhone | Not tested |
 | Native layout / VoiceOver / Dynamic Type | Not tested |
 | Battery / latency / wrist-down usability | Not measured |
 
 Command: `CHROME_PATH=/usr/bin/google-chrome npm test`.
+
+For the Wristbeam publication checkpoint, the local CI runner also executed
+the workflow's `scroll-engine` job successfully (12.4 seconds). It reported
+`apple-build` as skipped because it requires Darwin and this host is Linux.
+Renaming changed test symbol references and project/scheme/package names only;
+the behavior assertions and required CI lanes were not weakened.
 
 The browser engine was mutation-tested: disabling movement caused 5 of the 6
 engine tests to fail. The original source was restored and the full suite rerun.

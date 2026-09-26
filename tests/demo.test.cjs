@@ -26,7 +26,7 @@ test('bundled offline article fits reading widths and responds to the actual eng
         assert.ok(before.width <= before.viewport, `${width}/${colorScheme}: horizontal overflow`);
         await page.screenshot({ path: path.join(output, `sample-${width}-${colorScheme}.png`), fullPage: false });
         const after = await page.evaluate(() => {
-          wristScroll({ kind: 'page', amount: 1 });
+          wristbeamScroll({ kind: 'page', amount: 1 });
           return { offset: document.scrollingElement.scrollTop, viewport: document.scrollingElement.clientHeight };
         });
         assert.ok(Math.abs(after.offset - after.viewport * 0.85) <= 1);

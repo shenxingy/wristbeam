@@ -1,4 +1,4 @@
 // Copy to Local.xcconfig, which is ignored by Git.
 // Both app identifiers and the Watch companion ID follow this prefix.
-WRISTSCROLL_BUNDLE_PREFIX = com.yourname
+WRISTBEAM_BUNDLE_PREFIX = com.yourname
 DEVELOPMENT_TEAM = YOUR_TEAM_ID

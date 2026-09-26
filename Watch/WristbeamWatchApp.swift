@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 @MainActor
-struct WristScrollWatchApp: App {
+struct WristbeamWatchApp: App {
     @StateObject private var remote = WatchRemote()
     @Environment(\.scenePhase) private var scenePhase
 
@@ -28,7 +28,7 @@ struct RemoteView: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            Text("WristScroll").font(.headline)
+            Text("Wristbeam").font(.headline)
             Text(LocalizedStringKey(remote.statusKey))
                 .font(.caption)
                 .multilineTextAlignment(.center)

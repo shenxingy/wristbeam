@@ -1,4 +1,4 @@
-(function installWristScroll(global) {
+(function installWristbeam(global) {
   'use strict';
 
   var rememberedTarget = null;
@@ -62,7 +62,7 @@
     };
   }
 
-  function wristScroll(command) {
+  function wristbeamScroll(command) {
     var target = targetForCommand();
     if (!command || typeof command !== 'object' || Array.isArray(command)) {
       return result(false, false, target, 'invalid-command');
@@ -99,5 +99,5 @@
     rememberedTarget = asElement(event.target);
   }, true);
 
-  global.wristScroll = wristScroll;
+  global.wristbeamScroll = wristbeamScroll;
 })(globalThis);

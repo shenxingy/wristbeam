@@ -1,4 +1,4 @@
-name: WristScroll
+name: Wristbeam
 options:
   minimumXcodeGenVersion: 2.44.0
   developmentLanguage: en
@@ -17,7 +17,7 @@ settings:
     CURRENT_PROJECT_VERSION: "1"
     CODE_SIGN_STYLE: Automatic
 targets:
-  WristScroll:
+  Wristbeam:
     type: application
     platform: iOS
     deploymentTarget: "17.0"
@@ -32,7 +32,7 @@ targets:
     info:
       path: build/iOS-Info.plist
       properties:
-        CFBundleDisplayName: WristScroll
+        CFBundleDisplayName: Wristbeam
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchScreen: {}
@@ -44,13 +44,13 @@ targets:
           - UIInterfaceOrientationLandscapeRight
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: $(WRISTSCROLL_BUNDLE_PREFIX).WristScroll
+        PRODUCT_BUNDLE_IDENTIFIER: $(WRISTBEAM_BUNDLE_PREFIX).Wristbeam
         TARGETED_DEVICE_FAMILY: "1"
         SUPPORTS_MACCATALYST: NO
     dependencies:
-      - target: WristScrollWatch
+      - target: WristbeamWatch
         embed: true
-  WristScrollWatch:
+  WristbeamWatch:
     type: application
     platform: watchOS
     deploymentTarget: "10.0"
@@ -62,27 +62,27 @@ targets:
     info:
       path: build/watchOS-Info.plist
       properties:
-        CFBundleDisplayName: WristScroll
+        CFBundleDisplayName: Wristbeam
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         WKApplication: true
-        WKCompanionAppBundleIdentifier: $(WRISTSCROLL_BUNDLE_PREFIX).WristScroll
+        WKCompanionAppBundleIdentifier: $(WRISTBEAM_BUNDLE_PREFIX).Wristbeam
         WKRunsIndependentlyOfCompanionApp: false
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: $(WRISTSCROLL_BUNDLE_PREFIX).WristScroll.watchkitapp
+        PRODUCT_BUNDLE_IDENTIFIER: $(WRISTBEAM_BUNDLE_PREFIX).Wristbeam.watchkitapp
         TARGETED_DEVICE_FAMILY: "4"
         SKIP_INSTALL: YES
 schemes:
-  WristScroll:
+  Wristbeam:
     build:
       targets:
-        WristScroll: all
+        Wristbeam: all
     run:
       config: Debug
-  WristScrollWatch:
+  WristbeamWatch:
     build:
       targets:
-        WristScrollWatch: all
+        WristbeamWatch: all
     run:
       config: Debug

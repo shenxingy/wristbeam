@@ -3,7 +3,7 @@ import WebKit
 
 @main
 @MainActor
-struct WristScrollApp: App {
+struct WristbeamApp: App {
     @StateObject private var reader = ReaderModel()
     @StateObject private var connection = PhoneSession()
     @Environment(\.scenePhase) private var scenePhase

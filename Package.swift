@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "WristScrollCore",
+    name: "WristbeamCore",
     platforms: [.iOS(.v17), .watchOS(.v10), .macOS(.v13)],
-    products: [.library(name: "WristScrollCore", targets: ["WristScrollCore"])],
+    products: [.library(name: "WristbeamCore", targets: ["WristbeamCore"])],
     targets: [
-        .target(name: "WristScrollCore", path: "Shared"),
-        .testTarget(name: "WristScrollCoreTests", dependencies: ["WristScrollCore"], path: "Tests/CoreTests")
+        .target(name: "WristbeamCore", path: "Shared"),
+        .testTarget(name: "WristbeamCoreTests", dependencies: ["WristbeamCore"], path: "Tests/CoreTests")
     ]
 )

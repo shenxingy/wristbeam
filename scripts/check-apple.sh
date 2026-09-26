@@ -11,9 +11,9 @@ command -v xcodebuild >/dev/null
 command -v swift >/dev/null
 xcodegen generate
 swift test
-xcodebuild -project WristScroll.xcodeproj -scheme WristScroll \
+xcodebuild -project Wristbeam.xcodeproj -scheme Wristbeam \
   -configuration Debug -destination 'generic/platform=iOS Simulator' \
   -derivedDataPath build/DerivedData CODE_SIGNING_ALLOWED=NO build
-xcodebuild -project WristScroll.xcodeproj -scheme WristScrollWatch \
+xcodebuild -project Wristbeam.xcodeproj -scheme WristbeamWatch \
   -configuration Debug -destination 'generic/platform=watchOS Simulator' \
   -derivedDataPath build/DerivedData CODE_SIGNING_ALLOWED=NO build

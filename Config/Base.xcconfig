@@ -1,3 +1,3 @@
 // Override locally; never commit a signing team or private bundle prefix.
-WRISTSCROLL_BUNDLE_PREFIX = org.example
+WRISTBEAM_BUNDLE_PREFIX = org.example
 #include? "Local.xcconfig"

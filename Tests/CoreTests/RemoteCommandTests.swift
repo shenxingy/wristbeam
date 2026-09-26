@@ -1,5 +1,5 @@
 import XCTest
-@testable import WristScrollCore
+@testable import WristbeamCore
 
 final class RemoteCommandTests: XCTestCase {
     func testOnlyFreshBoundedGesturesCanCrossBoundary() throws {

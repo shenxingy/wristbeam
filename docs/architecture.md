@@ -53,9 +53,39 @@ containing app cannot directly push messages to extension JavaScript. A pull
 mechanism and its timing would need separate tests. Arbitrary native app
 control is not part of this architecture.
 
+The following is a **proposed direction, not implemented code**:
+
+```mermaid
+flowchart LR
+    Input[Watch or future controller] --> Transport[Authenticated transport]
+    Transport --> Router[Explicitly paired target and capabilities]
+    Router --> Reader[Own reader]
+    Router --> Browser[Desktop receiver and browser extension]
+    Router --> Media[Player adapter]
+```
+
+An input produces an action; a transport delivers it; a receiver checks
+ownership, freshness, target, and capability; an adapter performs it and reports
+the observed effect. Do not freeze a cross-platform protocol before a second
+receiver proves the need. The current scroll/page/ping protocol is specific to
+this prototype and has no desktop pairing mechanism.
+
+WatchConnectivity connects the watch and its paired iOS companion, not a Mac,
+Windows, or Linux machine. A first desktop experiment can use a phone relay
+and an explicitly paired local receiver. Foreground, sleep, authentication,
+discovery, and latency behavior must be tested before selecting the transport.
+An always-running phone relay is not promised.
+
+Desktop Chrome can investigate native messaging between an extension and a
+registered host. Website scripts must never become a privileged command channel.
+Safari desktop, Safari iOS, and native OS input need separate permission and
+lifecycle analysis. A media adapter should start with its own player or a
+documented API. See [ROADMAP.md](../ROADMAP.md) for acceptance criteria.
+
 Sources used for the design:
 
 - [WatchConnectivity](https://developer.apple.com/documentation/watchconnectivity/wcsession)
 - [Real-device lifecycle differences](https://developer.apple.com/documentation/watchconnectivity/transferring-data-with-watch-connectivity)
 - [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)
 - [Safari extension communication](https://developer.apple.com/documentation/safariservices/messaging-between-the-app-and-javascript-in-a-safari-web-extension)
+- [Desktop Chrome native messaging](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging)

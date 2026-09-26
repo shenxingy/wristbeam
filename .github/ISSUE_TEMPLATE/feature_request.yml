@@ -1,0 +1,46 @@
+name: Feature request
+description: Suggest a focused improvement for Wristbeam.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. English or Chinese is welcome.
+        Please redact secrets, device identifiers, and private URLs.
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: Who needs this, and what problem should it solve?
+    validations:
+      required: true
+  - type: input
+    id: controller
+    attributes:
+      label: Controller
+      description: Which controller or input should trigger it?
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target
+      description: Which app, device, browser, or platform should be affected?
+    validations:
+      required: true
+  - type: textarea
+    id: action
+    attributes:
+      label: Action
+      description: Describe the requested action and interaction.
+    validations:
+      required: true
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: Narrow success criteria
+      description: What observable result would show that this request is complete?
+    validations:
+      required: true

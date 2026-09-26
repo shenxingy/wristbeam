@@ -1,0 +1,67 @@
+name: Device validation report
+description: Share a device test result, including an incomplete or failed run.
+title: "[Device]: "
+labels:
+  - device-report
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing Wristbeam. English or Chinese is welcome.
+        Please redact secrets, device identifiers, and private URLs.
+  - type: input
+    id: build_commit
+    attributes:
+      label: Build or commit
+      description: Which build, branch, or exact commit did you test?
+    validations:
+      required: true
+  - type: input
+    id: operating_system
+    attributes:
+      label: OS and version
+    validations:
+      required: true
+  - type: input
+    id: device_model
+    attributes:
+      label: Device model
+      description: Share only the model; omit serial numbers and other identifiers.
+    validations:
+      required: true
+  - type: textarea
+    id: debugger
+    attributes:
+      label: Debugger or instrumentation
+      description: State what debugger, console, or instrumentation was attached, or say none.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Validation steps
+      description: Describe the scenario and exact steps you ran.
+    validations:
+      required: true
+  - type: textarea
+    id: lifecycle_results
+    attributes:
+      label: Actual lifecycle results
+      description: Record what happened across launch, background, resume, disconnect, reconnect, or other relevant lifecycle events.
+    validations:
+      required: true
+  - type: textarea
+    id: unrun_checks
+    attributes:
+      label: Checks not run
+      description: List relevant checks or lifecycle paths you did not run, or say none.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Add logs, screenshots, or recordings. Redact secrets, device identifiers, and private URLs.
+      render: text
+    validations:
+      required: false

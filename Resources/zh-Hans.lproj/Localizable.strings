@@ -2,10 +2,10 @@
 "reader.open" = "打开网页";
 "reader.back" = "返回上个网页";
 "reader.watchConnected" = "手表已连接";
-"reader.openWatch" = "在 Apple Watch 上打开 WristScroll";
+"reader.openWatch" = "在 Apple Watch 上打开 Wristbeam";
 "reader.help" = "关于阅读器";
 "reader.howTo" = "用手表翻页";
-"reader.helpBody" = "让 iPhone 保持显示这个阅读器。在配对的 Apple Watch 上打开 WristScroll，转动表冠滚动，或点箭头翻一屏。可以先试读示例文章。";
+"reader.helpBody" = "让 iPhone 保持显示这个阅读器。在配对的 Apple Watch 上打开 Wristbeam，转动表冠滚动，或点箭头翻一屏。可以先试读示例文章。";
 "reader.keepAwake" = "保持 iPhone 屏幕常亮";
 "reader.keepAwakeHint" = "仅在阅读器显示时生效，会增加耗电。";
 "reader.scope" = "原型说明";
@@ -21,8 +21,8 @@
 "remote.connecting" = "正在连接 iPhone…";
 "remote.unavailable" = "暂时无法使用手表连接。";
 "remote.paused" = "在 iPhone 打开阅读器后继续。";
-"remote.disconnected" = "请在配对的 iPhone 上打开 WristScroll。";
-"remote.openReader" = "请让 iPhone 保持显示 WristScroll。";
+"remote.disconnected" = "请在配对的 iPhone 上打开 Wristbeam。";
+"remote.openReader" = "请让 iPhone 保持显示 Wristbeam。";
 "remote.loading" = "iPhone 正在加载网页…";
 "remote.ready" = "可以翻页了";
 "remote.boundary" = "已到达当前页面边缘";

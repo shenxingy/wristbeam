@@ -11,7 +11,7 @@ private struct ComponentLab: View {
         NavigationStack {
             Form {
                 Section("reader.howTo") {
-                    Text("WristScroll").font(.headline)
+                    Text("Wristbeam").font(.headline)
                     Text("reader.helpBody").font(.body)
                     Text("reader.openWatch").font(.caption).foregroundStyle(.secondary)
                 }
@@ -28,7 +28,7 @@ private struct ComponentLab: View {
                     Toggle("reader.keepAwake", isOn: $enabled)
                 }
             }
-            .navigationTitle("WristScroll")
+            .navigationTitle("Wristbeam")
         }
     }
 }

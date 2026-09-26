@@ -1,19 +1,40 @@
-# WristScroll
+# Wristbeam
 
-Read on your iPhone. Scroll from your Apple Watch.
+Small gestures. More reach.
 
-[简体中文](README.zh-CN.md) · [Device validation](docs/validation.md) · [Architecture](docs/architecture.md)
+[简体中文](README.zh-CN.md) · [Roadmap](ROADMAP.md) · [Contribute](CONTRIBUTING.md) · [Discussions](https://github.com/shenxingy/wristbeam/discussions)
 
-WristScroll is an MIT-licensed experiment for reading with a phone on a stand.
-It pairs an iPhone web reader with an Apple Watch remote: turn the Digital Crown
-for small scrolls, or tap an arrow to move one screen at a time. No additional
-hardware, server, or account is used by the app.
+Wristbeam is an open-source project for controlling your devices from your
+wrist, one useful interaction at a time. The name combines **wrist + beam**:
+a small action reaching the screen you are using.
+
+We start with a phone on a stand: an iPhone web reader and an Apple Watch
+remote. Turn the Digital Crown for small scrolls, or tap an arrow to move a
+screen at a time. The current prototype uses no additional hardware, server,
+or account. Desktop browsers, more operating systems, and media players are
+future adapters, not features available today.
 
 **Status: source prototype, not a verified native release.** The browser scroll
 engine has been tested in Chromium. The iOS/watchOS apps have **not yet been
 compiled or tested on physical devices**. The development host is Linux; the
 Apple build and device gates below remain open. There are no prebuilt binaries
-or TestFlight release.
+or TestFlight release. Follow the live [build checks](https://github.com/shenxingy/wristbeam/actions/workflows/check.yml)
+and the separate [device evidence](docs/validation.md).
+
+## Grow one working path at a time
+
+| Target | State | Next evidence needed |
+| --- | --- | --- |
+| Own iPhone reader + Apple Watch | Source prototype; Chromium engine tests pass | Native builds, paired-device use, wrist-down recovery |
+| Desktop Chrome; macOS first | Planned | One explicitly paired computer and selected tab |
+| Windows / Linux receivers | Planned | Per-OS installation and compatibility evidence |
+| Safari on macOS / iOS | Separate research tracks | Platform-specific messaging and lifecycle experiments |
+| Own player, then other media apps | Planned | One documented playback API and observable action |
+| Other watches / input devices | Open direction | A contributor-owned, tested adapter |
+
+The [roadmap](ROADMAP.md) defines small milestones and completion criteria.
+We use public APIs available today; future platform changes can unlock new
+adapters without being a prerequisite for the project.
 
 ## First scope
 
@@ -50,11 +71,11 @@ its signing and Developer Mode prompts for both devices.
 
 ```bash
 xcodegen generate
-open WristScroll.xcodeproj
+open Wristbeam.xcodeproj
 ```
 
-1. Select the `WristScroll` scheme and your physical iPhone. Build and run.
-2. Select `WristScrollWatch` and its paired Apple Watch. Build and run.
+1. Select the `Wristbeam` scheme and your physical iPhone. Build and run.
+2. Select `WristbeamWatch` and its paired Apple Watch. Build and run.
 3. Keep the reader visible on iPhone; open the remote on the watch. Wait for
    “Ready to scroll”, then try the sample article with the arrows and Crown.
 4. Relaunch both apps directly from their home screens, disconnected from the
@@ -82,7 +103,8 @@ bash scripts/check-apple.sh
 The Apple script runs `swift test` for the command/URL boundaries and unsigned
 simulator builds of **both** native targets. It exits with an error on Linux;
 an unavailable build is not a passing build. GitHub Actions defines the same
-browser and Apple lanes, but no hosted run has occurred yet.
+browser and Apple lanes. Hosted results are available in the build-check link
+above; a green simulator build still does not establish physical-device behavior.
 
 Browser tests observe actual scroll positions, including nested scrolling,
 limits, invalid input, and pages with CSS smooth scrolling. They do not test
@@ -105,9 +127,15 @@ in flight. See [architecture.md](docs/architecture.md) for the remaining limits.
 
 ## Contribute
 
-Useful first contributions are a clean Xcode build, device test results, and
-reproducible website compatibility reports. Include device/OS versions and
-whether a debugger was attached. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Useful first contributions are native build fixes, device test results,
+reproducible website compatibility reports, and clearer setup instructions.
+English and Chinese are welcome. You do not need to write Swift to contribute.
+
+- [Report a bug or device test](https://github.com/shenxingy/wristbeam/issues/new/choose).
+- [Discuss a use case or adapter](https://github.com/shenxingy/wristbeam/discussions).
+- Read [CONTRIBUTING.md](CONTRIBUTING.md), [community plans](docs/community.md),
+  and [project governance](GOVERNANCE.md).
+- Report vulnerabilities through [SECURITY.md](SECURITY.md).
 
 MIT licensed. Apple Watch and iPhone are trademarks of Apple Inc. This project
 is independent of Apple.

@@ -1,0 +1,56 @@
+name: Bug report
+description: Report a reproducible problem in Wristbeam.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Wristbeam. English or Chinese is welcome.
+        Please redact secrets, device identifiers, and private URLs before posting.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: What did you do? Include the smallest reliable sequence.
+      placeholder: |
+        1. Open ...
+        2. Tap ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Wristbeam version or commit
+      description: Give the app/build version or source commit you tested.
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target
+      description: Identify the relevant target, such as iPhone, Apple Watch, or browser.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste relevant logs or attach screenshots. Redact secrets, device identifiers, and private URLs.
+      render: text
+    validations:
+      required: false

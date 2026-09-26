@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Discuss an idea
+    url: https://github.com/shenxingy/wristbeam/discussions
+    about: Ask questions and explore ideas with the community.
+  - name: Report a security vulnerability privately
+    url: https://github.com/shenxingy/wristbeam/security/advisories/new
+    about: Use a private security advisory for vulnerability reports.

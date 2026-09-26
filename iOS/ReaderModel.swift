@@ -8,7 +8,7 @@ final class ReaderModel: NSObject, ObservableObject, WKNavigationDelegate {
     @Published private(set) var hasDocument = false
     @Published private(set) var errorKey: String?
     @Published private(set) var canGoBack = false
-    @Published private(set) var pageName = "WristScroll"
+    @Published private(set) var pageName = "Wristbeam"
     @Published var keepAwake = false {
         didSet { updateIdleTimer() }
     }
@@ -74,7 +74,7 @@ final class ReaderModel: NSObject, ObservableObject, WKNavigationDelegate {
         let expectedDocument = documentID
         // Arguments are structured values, never interpolated into JavaScript source.
         webView.callAsyncJavaScript(
-            "return globalThis.wristScroll(command);",
+            "return globalThis.wristbeamScroll(command);",
             arguments: ["command": ["kind": command.kind.rawValue, "amount": command.amount]],
             in: nil, in: .defaultClient
         ) { [weak self] result in
@@ -109,7 +109,7 @@ final class ReaderModel: NSObject, ObservableObject, WKNavigationDelegate {
         isLoading = false
         hasDocument = engineAvailable
         canGoBack = webView.canGoBack
-        pageName = webView.url?.host ?? "WristScroll"
+        pageName = webView.url?.host ?? "Wristbeam"
         if !engineAvailable { errorKey = "reader.missingResources" }
     }
 

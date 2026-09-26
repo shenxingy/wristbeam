@@ -2,10 +2,10 @@
 "reader.open" = "Open website";
 "reader.back" = "Previous website";
 "reader.watchConnected" = "Watch connected";
-"reader.openWatch" = "Open WristScroll on your Apple Watch";
+"reader.openWatch" = "Open Wristbeam on your Apple Watch";
 "reader.help" = "About this reader";
 "reader.howTo" = "Read from your wrist";
-"reader.helpBody" = "Keep this reader open on iPhone. Open WristScroll on your paired Apple Watch, then turn the Crown or tap the arrows. Try the sample article first.";
+"reader.helpBody" = "Keep this reader open on iPhone. Open Wristbeam on your paired Apple Watch, then turn the Crown or tap the arrows. Try the sample article first.";
 "reader.keepAwake" = "Keep iPhone screen awake";
 "reader.keepAwakeHint" = "Only while this reader is in the foreground. Uses more battery.";
 "reader.scope" = "Prototype limits";
@@ -21,8 +21,8 @@
 "remote.connecting" = "Connecting to iPhone…";
 "remote.unavailable" = "Watch connection is unavailable.";
 "remote.paused" = "Open the reader on iPhone to continue.";
-"remote.disconnected" = "Open WristScroll on your paired iPhone.";
-"remote.openReader" = "Keep WristScroll visible on iPhone.";
+"remote.disconnected" = "Open Wristbeam on your paired iPhone.";
+"remote.openReader" = "Keep Wristbeam visible on iPhone.";
 "remote.loading" = "iPhone is loading the page…";
 "remote.ready" = "Ready to scroll";
 "remote.boundary" = "Reached the edge of this page";
