@@ -1,0 +1,26 @@
+name: Check prototype
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  scroll-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+  apple-build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install project generator
+        run: brew install xcodegen
+      - name: Test protocol and compile both native targets
+        run: bash scripts/check-apple.sh

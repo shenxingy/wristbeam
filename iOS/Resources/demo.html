@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>A little less reaching · 少伸一次手</title>
+<style>
+  :root {
+    --paper: #ffffff; --ink: #1e293b; --muted: #526174; --rule: #cbd5e1;
+    --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 32px;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #15181e; --ink: #eef2f6; --muted: #b8c1cc; --rule: #4b5563; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 1.125rem/1.8 system-ui, sans-serif; }
+  main { max-width: 38rem; margin-inline: auto; padding: var(--space-xl) var(--space-lg); overflow-wrap: anywhere; }
+  h1 { font-size: 2rem; line-height: 1.2; margin-block: var(--space-md) var(--space-lg); }
+  h2 { font-size: 1.5rem; line-height: 1.4; margin-top: var(--space-xl); }
+  p { margin-block: var(--space-md); }
+  .caption { color: var(--muted); font-size: 0.875rem; }
+  section + section { margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--rule); }
+</style>
+<main>
+  <p class="caption">WRISTSCROLL · SAMPLE ARTICLE / 示例文章</p>
+  <h1>A little less reaching<br><span lang="zh-Hans">少伸一次手</span></h1>
+  <p>This article lives on your phone. Open WristScroll on your Apple Watch and turn the Digital Crown. The arrows move one screen, leaving a little overlap so you can keep your place.</p>
+  <p lang="zh-Hans">这篇文章保存在手机里，不需要网络。现在打开手表上的 WristScroll，转动表冠滚动。点箭头可以翻一屏，并保留一点上下文，方便接着读。</p>
+  <section>
+    <h2>The phone on the stand</h2>
+    <p>You have found a comfortable position. The phone is at the right angle, the light is soft, and the next few minutes belong to a story. Then the text reaches the bottom of the screen. You reach out, swipe, settle back, and find the sentence again.</p>
+    <p>A remote reader starts with this small interruption. It does not need to do everything a phone can do. It needs to move the page when asked, stay still when you stop, and make it clear when the connection is unavailable.</p>
+    <p lang="zh-Hans">手机已经架好，枕头的位置也刚刚合适。读到屏幕底部，你伸手滑一下，再把手放回来。一篇长文章里，这个动作会重复很多次。这个实验从这件小事开始。</p>
+  </section>
+  <section>
+    <h2>A page at a time</h2>
+    <p>Try the down arrow on your watch. A little of the previous screen should remain visible. That overlap is an anchor: the sentence you just read is still there, and the next paragraph begins below it.</p>
+    <p>Now turn the Crown slowly. Then reverse direction. Small corrections matter when a footnote, a diagram, or a sentence deserves a second look. A page should feel under your control, even when your hand is away from the screen.</p>
+    <p lang="zh-Hans">试试手表上的向下箭头。上一屏的末尾应该仍然能看到。再慢慢转动表冠，然后反向转动：偶尔回头读一句话，也应该方便。</p>
+  </section>
+  <section>
+    <h2>Take a pause</h2>
+    <p>Stop reading for a moment. Put your wrist where it naturally rests, let the watch display dim, and wait. When you return, notice what you have to do before the next page moves.</p>
+    <p>This is the most useful part of the experiment. Does touching the watch feel comfortable? Is the connection still available? Does a short pause turn into a long setup? Those observations tell us more than a feature list.</p>
+    <p lang="zh-Hans">现在停一会儿，让手自然地放着，等手表屏幕变暗。继续读的时候，留意自己需要做几个动作才能翻页。这正是这个原型需要验证的地方。</p>
+  </section>
+  <section>
+    <h2>Keep your place</h2>
+    <p>At the end of this article, another downward command should leave the page still. An upward command should immediately bring earlier text back. There is no need to rush through the words: choose a pace that feels natural.</p>
+    <p>If you want to try a live website, enter its address at the top of the reader. Start with a simple article. Some websites contain independent scrolling panels or special viewers, so they may behave differently.</p>
+    <p lang="zh-Hans">到达文章底部后，再向下翻，页面应该保持不动。向上翻，则回到之前的内容。也可以在顶部输入一个网址，从普通长文章开始试用。</p>
+  </section>
+  <p class="caption">End of sample · 示例结束</p>
+</main>
+</html>
